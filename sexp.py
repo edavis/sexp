@@ -1,4 +1,8 @@
-import re
+import re, os
+
+def load(fname):
+    with open(os.path.expanduser(fname)) as fp:
+        return parse(fp.read())
 
 def parse(s):
     result, stack = [], []

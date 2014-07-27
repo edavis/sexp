@@ -12,6 +12,9 @@ testcases = [
     ('(1 "foo" b)', [1, '"foo"', 'b']),
     ('(:name "eric" :age 25)', [':name', '"eric"', ':age', 25]),
 
+    ('(org-data nil (headline (:title (#("Hello World" 0 11 (:parent #0))))))',
+     ['org-data', [], ['headline', [':title', [['"Hello World"', 0, 11, [':parent', '#0']]]]]]),
+
     # http://rosettacode.org/wiki/S-Expressions
     ('''((data "quoted data" 123 4.5)
       (data (!@# (4.5) "(more" "data)")))''',

@@ -21,6 +21,14 @@ def parse(s):
             result.append(cur)
             idx += 1
         
+        elif s[idx:idx+2] == '#(':
+            # '#(' is how elisp stores text properties in strings
+            # (http://goo.gl/mzR4yQ)
+            #
+            # So what we do is skip past just the '#' sign and keep
+            # parsing as normal.
+            idx += 1
+
         elif re.search('[a-zA-Z:!@#]', c):
             m = re.search('([\w:!@#-]+)', s[idx:])
             value = m.group()

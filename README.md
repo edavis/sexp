@@ -8,6 +8,7 @@ Usage
 
 ```python
 >>> import sexp
+
 >>> sexp.parse('()')
 []
 
@@ -20,18 +21,16 @@ Usage
 >>> sexp.parse('(a nil (c d))') # nil becomes []
 ['a', [], ['c', 'd']]
 
->>> # Strings
->>> sexp.parse('("Hello World")') # by default, strings lose their quotes ...
+>>> sexp.parse('("Hello World")') # strings lose their quotes …
 ['Hello World']
 
->>> sexp.parse('("Hello World")', strip_quotes=False) # ... but that's optional
+>>> sexp.parse('("Hello World")', strip_quotes=False) # … but that's optional
 ['"Hello World"']
 
->>> # Advanced
->>> sexp.parse('(:name eric :skills (python django))') # plists
+>>> sexp.parse('(:name eric :skills (python django))') # plists are just symbols
 [':name', 'eric', ':skills', ['python', 'django']]
 
->>> sexp.parse('(#("Hello World" 0 11 (:parent #0)))') # text properties
+>>> sexp.parse('(#("Hello World" 0 11 (:parent #0)))') # text properties work fine
 [['Hello World', 0, 11, [':parent', '#0']]]
 
 >>> sexp.load('~/sexp.txt') # helper function to load from a file

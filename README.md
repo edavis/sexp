@@ -1,10 +1,10 @@
 sexp.py
--------
+=======
 
 `sexp.py` is a python module for parsing [symbolic expressions](http://en.wikipedia.org/wiki/S-expression):
 
 Usage
-=====
+-----
 
 ```python
 >>> import sexp
@@ -39,6 +39,6 @@ intelligently handles
 Check out `sexp_test.py` for more examples.
 
 License
-=======
+-------
 
 BSD

@@ -11,6 +11,7 @@ testcases = [
     ('(1 nil 3)', [1, [], 3]),
     ('(1 "foo" b)', [1, 'foo', 'b']),
     ('(:name "eric" :age 25)', [':name', 'eric', ':age', 25]),
+    ('(a b #("Hello World" 0 11 (:parent 1)))', ['a', 'b', ['Hello World', 0, 11, [':parent', 1]]]),
 
     ('(org-data nil (headline (:title (#("Hello World" 0 11 (:parent #0))))))',
      ['org-data', [], ['headline', [':title', [['Hello World', 0, 11, [':parent', '#0']]]]]]),

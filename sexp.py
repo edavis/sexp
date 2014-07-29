@@ -14,7 +14,7 @@ def parse(s, strip_quotes=True):
     >>> parse('(:name "Eric")')
     [':name', 'Eric']
 
-    >> parse('(:name "Eric")', False)
+    >>> parse('(:name "Eric")', False)
     [':name', '"Eric"']
 
     By default, `strip_quotes' is True.
